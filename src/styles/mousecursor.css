@@ -78,22 +78,28 @@
 }
 
 @supports (mix-blend-mode: exclusion) {
-	.cb-cursor.-exclusion, .cb-cursor.-opaque {
+
+	.cb-cursor.-exclusion,
+	.cb-cursor.-opaque {
 		mix-blend-mode: exclusion;
 	}
 }
 
 @supports (mix-blend-mode: exclusion) {
-	.cb-cursor.-exclusion:before, .cb-cursor.-opaque:before {
+
+	.cb-cursor.-exclusion:before,
+	.cb-cursor.-opaque:before {
 		background: white;
 	}
 }
 
-.cb-cursor.-normal, .cb-cursor.-text {
+.cb-cursor.-normal,
+.cb-cursor.-text {
 	mix-blend-mode: normal;
 }
 
-.cb-cursor.-normal:before, .cb-cursor.-text:before {
+.cb-cursor.-normal:before,
+.cb-cursor.-text:before {
 	background: currentColor;
 }
 
