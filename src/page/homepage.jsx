@@ -391,7 +391,7 @@ export default function HomePage() {
                         <nav className="navbar navbar-expand-lg">
                             <div className="container">
                                 <a className="navbar-brand" href="#hero" onClick={(e) => { e.preventDefault(); scrollTo('hero'); }}>
-                                    <img src="/images/logo.svg" alt="Nexora IoT Logo" />
+                                    <img src="/images/logo.svg" alt="Bash Technolgoies IoT Logo" />
                                 </a>
 
                                 <div className={`collapse navbar-collapse main-menu${menuOpen ? ' show' : ''}`}>
@@ -459,7 +459,7 @@ export default function HomePage() {
                                                 <div className="col-lg-7">
                                                     <div className={`hero-content ${heroReady && heroActiveIndex === i ? 'hero-revealed' : ''}`}>
                                                         <div className="section-title dark-section">
-                                                            <h3 className="hero-stagger">welcome to nexora iot</h3>
+                                                            <h3 className="hero-stagger">welcome to Bash Technolgoies iot</h3>
                                                             <h1 className="hero-stagger" style={{ animationDelay: '0.2s' }}>
                                                                 Connect everything, unlock every insight!
                                                             </h1>
@@ -626,7 +626,7 @@ export default function HomePage() {
                     <div className="our-feature" id="features">
                         <div className="container">
                             <div className="row align-items-center">
-                                <div className="col-lg-6">
+                                <div className="col-lg-5">
                                     <div className="our-feature-images">
                                         <div className="feature-image">
                                             <figure className="image-anime reveal">
@@ -657,7 +657,7 @@ export default function HomePage() {
                                     </div>
                                 </div>
 
-                                <div className="col-lg-6">
+                                <div className="col-lg-7">
                                     <div className="our-feature-content">
                                         <div className="section-title">
                                             <h3 className="wow fadeInUp">our features</h3>
@@ -997,7 +997,7 @@ export default function HomePage() {
                                 <div className="col-lg-12">
                                     <div className="section-title dark-section">
                                         <h3 className="wow fadeInUp">Expert team</h3>
-                                        <h2 className="wow fadeInUp" data-wow-delay="0.2s">Meet the minds behind Nexora</h2>
+                                        <h2 className="wow fadeInUp" data-wow-delay="0.2s">Meet the minds behind Bash Technolgoies</h2>
                                     </div>
                                 </div>
                             </div>
@@ -1057,7 +1057,7 @@ export default function HomePage() {
                                                     </div>
                                                     <div className="cta-contact-content">
                                                         <h3>Send us an email</h3>
-                                                        <p><a href="mailto:hello@nexoraiot.com">hello@nexoraiot.com</a></p>
+                                                        <p><a href="mailto:hello@Bash Technolgoiesiot.com">hello@Bash Technolgoiesiot.com</a></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1240,7 +1240,7 @@ export default function HomePage() {
                             <div className="col-lg-12">
                                 <div className="footer-header">
                                     <div className="footer-logo">
-                                        <img src="/images/footer-logo.svg" alt="Nexora IoT" />
+                                        <img src="/images/footer-logo.svg" alt="Bash Technolgoies IoT" />
                                     </div>
                                     <div className="footer-social-links">
                                         <ul>
@@ -1315,7 +1315,7 @@ export default function HomePage() {
                                     <h3>Contact</h3>
                                     <ul>
                                         <li><a href="tel:+123456789">+123 456 789</a></li>
-                                        <li><a href="mailto:hello@nexoraiot.com">hello@nexoraiot.com</a></li>
+                                        <li><a href="mailto:hello@Bash Technolgoiesiot.com">hello@Bash Technolgoiesiot.com</a></li>
                                         <li>123 High Street LN1 1AB United Kingdom</li>
                                     </ul>
                                 </div>
@@ -1328,7 +1328,7 @@ export default function HomePage() {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="footer-copyright-text">
-                                        <p>Copyright © 2025 Nexora IoT. All Rights Reserved.</p>
+                                        <p>Copyright © 2025 Bash Technolgoies IoT. All Rights Reserved.</p>
                                     </div>
                                 </div>
                             </div>
