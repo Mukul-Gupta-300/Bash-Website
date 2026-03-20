@@ -7,7 +7,6 @@ import '../styles/swiper-bundle.min.css';
 import '../styles/all.min.css';
 import '../styles/animate.css';
 import '../styles/magnific-popup.css';
-import '../styles/custom.css';
 
 /** --------------------------------------------------------------------------
  *  HELPERS & HOOKS
