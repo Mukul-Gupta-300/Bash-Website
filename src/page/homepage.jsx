@@ -2,6 +2,12 @@ import { useEffect, useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
+import '../styles/bootstrap.min.css';
+import '../styles/swiper-bundle.min.css';
+import '../styles/all.min.css';
+import '../styles/animate.css';
+import '../styles/magnific-popup.css';
+import '../styles/custom.css';
 
 /** --------------------------------------------------------------------------
  *  HELPERS & HOOKS
