@@ -1,4 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 
@@ -65,62 +67,89 @@ function Counter({ target, suffix = '' }) {
  *  -------------------------------------------------------------------------- */
 
 const slides = [
-    { bg: '/images/hero-bg.jpg' },
-    { bg: '/images/hero-bg-2.jpg' },
+    {
+        bg: '/images/New_Header.jpg',
+        subtitle: 'welcome to Bash Technologies',
+        title: 'Managed IT Services',
+        desc: 'Reliable monitoring, support, and maintenance for your complete IT ecosystem',
+    },
+    {
+        bg: '/images/IoT_Header.jpg',
+        subtitle: 'smart connectivity',
+        title: 'IoT Smart Solutions',
+        desc: 'End-to-end smart sensor connectivity, automation, and remote monitoring solutions for modern enterprises.',
+    },
+    {
+        bg: '/images/CyberSecurity_Header.jpg',
+        subtitle: 'stay protected',
+        title: 'Cybersecurity',
+        desc: 'Proactive security solutions to safeguard your business from cyber threats and vulnerabilities.',
+    },
+    {
+        bg: '/images/Network_Header.png',
+        subtitle: 'built for scale',
+        title: 'Networking Solutions',
+        desc: 'End-to-end design, deployment, and management of secure enterprise networks',
+    },
+    {
+        bg: '/images/OffIce_Network.jpg',
+        subtitle: 'seamless migration',
+        title: 'End-to-End IT Infrastructure Solution',
+        desc: 'From planning to implementation and support, we manage your entire IT ecosystem.',
+    },
 ];
 
 // ── 6 Core IT Infrastructure + IoT Services ──────────────────────────────────
 const services = [
     {
         icon: '/images/icon-service-1.svg',
-        title: 'Network Design & Implementation',
-        desc: 'We design and deploy robust, secure network architectures — covering LAN/WAN setup, VLAN segmentation, enterprise Wi-Fi, and router & switch configuration tailored to your business scale.',
+        title: 'Managed IT Services',
+        desc: 'We provide round-the-clock monitoring, remote support, patch management, and proactive maintenance for your entire IT environment — servers, networks, and endpoints — so your team can focus on business, not breakdowns.',
     },
     {
         icon: '/images/icon-service-2.svg',
-        title: 'Server & Storage Solutions',
-        desc: 'From physical server installation to advanced virtualisation with VMware, KVM, and Hyper-V — we build high-availability server environments with bulletproof backup and disaster recovery.',
+        title: 'IoT & Smart Systems',
+        desc: 'From sensor-equipped smart waste bins to connected industrial devices, we design and deploy end-to-end IoT ecosystems — integrating real-time data collection, central dashboards, and automation to drive operational efficiency.',
     },
     {
         icon: '/images/icon-service-3.svg',
-        title: 'Cloud Integration & Migration',
-        desc: 'Seamlessly migrate your on-premise infrastructure to AWS or Azure, configure hybrid cloud environments, and optimise your cloud resources for performance and cost-efficiency.',
+        title: 'VoIP Services',
+        desc: 'Modernise your business communications with enterprise-grade VoIP solutions — covering IP phone systems, SIP trunk configuration, call routing, voicemail, and unified communications. We handle the full setup and ongoing management so your team stays connected reliably, whether in the office or working remotely.',
     },
     {
         icon: '/images/icon-service-4.svg',
-        title: 'IT Security Infrastructure',
-        desc: 'Protect your business with enterprise-grade firewalls, VPN & secure remote access, endpoint security, intrusion detection systems, and full security audits for regulatory compliance.',
+        title: 'Cybersecurity',
+        desc: 'Protect your business with enterprise-grade firewalls, VPN & secure remote access, endpoint security, and intrusion detection systems. We also conduct full security audits and compliance assessments to keep your data and operations safe.',
     },
     {
         icon: '/images/icon-service-5.svg',
-        title: 'Structured Cabling & Hardware Setup',
-        desc: 'Build a rock-solid physical foundation with Cat6/Fiber cabling, rack installation, patch panel setup, and seamless CCTV & access control integration.',
+        title: 'Networking Solutions',
+        desc: 'We design and deploy high-performance LAN/WAN networks with VLAN segmentation, enterprise Wi-Fi, and router & switch configuration — built for reliability, security, and the scale your business demands today and tomorrow.',
     },
     {
         icon: '/images/icon-service-6.svg',
-        title: 'Monitoring & Managed Services',
-        desc: '24×7 network and server monitoring, proactive performance optimisation, remote IT support, patch management, and end-to-end incident & problem management — so you can focus on business.',
+        title: 'End-to-End IT Infrastructure',
+        desc: 'From structured cabling and server room builds to virtualisation, rack installation, and hardware procurement — we deliver your complete physical and digital IT foundation under one roof, with a single point of accountability from day one.',
     },
 ];
-
 // ── 3 Key Differentiators (Features section) ─────────────────────────────────
 const featuresList = [
     {
         icon: '/images/icon-ferature-1.svg',
-        title: 'proactive 24×7 infrastructure monitoring',
-        desc: 'Our NOC team monitors your entire IT environment around the clock — servers, networks, and endpoints — detecting issues before they impact your operations and resolving them in real time.',
+        title: 'Our Competitive Edge',
+        desc: 'Our strength lies in delivering reliable, innovative, and end-to-end technology solutions tailored to business needs. More Powerful Alternatives Our strength is in combining expertise, innovation, and execution to deliver smart technology solutions.',
         delay: '0.4s',
     },
     {
         icon: '/images/icon-ferature-2.svg',
-        title: 'end-to-end project ownership',
-        desc: 'From initial network design and hardware procurement to deployment, configuration, and ongoing support, we own the full lifecycle of your IT infrastructure — no hand-offs, no gaps.',
+        title: 'Highly Qualified & Professional Team',
+        desc: 'Our engineers are certified across the industry\'s most respected frameworks — CCNA, AWS, VMware, CEH, and more. But certifications alone don\'t define us. Every member of our team brings real-world, hands-on project experience, meaning you get professionals who have solved complex problems before — not engineers learning on your infrastructure.',
         delay: '0.6s',
     },
     {
         icon: '/images/icon-ferature-3.svg',
-        title: 'scalable architecture built for growth',
-        desc: 'Whether you\'re a 10-seat office or a multi-site enterprise, our solutions are engineered to scale with your business — protecting your investment as your infrastructure evolves.',
+        title: 'full documentation & handover on every project',
+        desc: 'When we finish a deployment, you don\'t just get a working system — you get complete network diagrams, configuration files, asset registers, and step-by-step documentation. Your team will always know exactly what\'s running and why, long after we\'re gone.',
         delay: '0.8s',
     },
 ];
@@ -274,10 +303,6 @@ export default function HomePage() {
     const [fadeOut, setFadeOut] = useState(false);
     const [heroReady, setHeroReady] = useState(false);
     const [isScrollLocked, setIsScrollLocked] = useState(true);
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [pagesOpen, setPagesOpen] = useState(false);
-    const [homeOpen, setHomeOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const [faqOpen, setFaqOpen] = useState(0);
     const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
     const [contactSubmitted, setContactSubmitted] = useState(false);
@@ -295,15 +320,11 @@ export default function HomePage() {
         const scrollTimer = setTimeout(() => setIsScrollLocked(false), 1400);
         const removeTimer = setTimeout(() => setVisible(false), 2000);
 
-        const handleScroll = () => setScrolled(window.scrollY > 50);
-        window.addEventListener('scroll', handleScroll);
-
         return () => {
             clearTimeout(fadeTimer);
             clearTimeout(heroTimer);
             clearTimeout(scrollTimer);
             clearTimeout(removeTimer);
-            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -356,11 +377,6 @@ export default function HomePage() {
         };
     }, [isScrollLocked]);
 
-    const scrollTo = (id) => {
-        setMenuOpen(false);
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-    };
 
     const goToProjectSlide = (index) => {
         const total = projects.length;
@@ -410,88 +426,8 @@ export default function HomePage() {
                 visibility: fadeOut ? 'visible' : 'hidden'
             }}>
 
-                {/* Topbar */}
-                <div className="topbar">
-                    <div className="container">
-                        <div className="row align-items-center">
-                            <div className="col-md-7">
-                                <div className="topbar-info-text">
-                                    <p>India's trusted IT infrastructure & IoT partner — <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>Get a free consultation today</a></p>
-                                </div>
-                            </div>
-                            <div className="col-md-5">
-                                <div className="topbar-links">
-                                    <div className="topbar-contact-info">
-                                        <ul>
-                                            <li><a href="#">Help</a></li>
-                                            <li><a href="#">Support</a></li>
-                                            <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>Contact</a></li>
-                                        </ul>
-                                    </div>
-                                    <div className="topbar-social-links">
-                                        <ul>
-                                            <li><a href="#"><i className="fa-brands fa-x-twitter"></i></a></li>
-                                            <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Header */}
-                <header className={`main-header${scrolled ? ' sticky' : ''}`}>
-                    <div className="header-sticky">
-                        <nav className="navbar navbar-expand-lg">
-                            <div className="container">
-                                <a className="navbar-brand" href="#hero" onClick={(e) => { e.preventDefault(); scrollTo('hero'); }}>
-                                    <img src="/images/logo.svg" alt="Bash Technologies Logo" />
-                                </a>
-
-                                <div className={`collapse navbar-collapse main-menu${menuOpen ? ' show' : ''}`}>
-                                    <div className="nav-menu-wrapper">
-                                        <ul className="navbar-nav mr-auto" id="menu">
-                                            <li className="nav-item submenu" onMouseEnter={() => setHomeOpen(true)} onMouseLeave={() => setHomeOpen(false)}>
-                                                <a className="nav-link" href="#hero" onClick={(e) => { e.preventDefault(); scrollTo('hero'); }}>Home</a>
-                                                {homeOpen && (
-                                                    <ul style={{ display: 'block' }}>
-                                                        <li className="nav-item"><a className="nav-link" href="#hero" onClick={(e) => { e.preventDefault(); scrollTo('hero'); }}>Home - Main</a></li>
-                                                    </ul>
-                                                )}
-                                            </li>
-                                            <li className="nav-item"><a className="nav-link" href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about'); }}>About Us</a></li>
-                                            <li className="nav-item"><a className="nav-link" href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services'); }}>Services</a></li>
-                                            <li className="nav-item"><a className="nav-link" href="#blog" onClick={(e) => { e.preventDefault(); scrollTo('blog'); }}>Blog</a></li>
-                                            <li className="nav-item submenu" onMouseEnter={() => setPagesOpen(true)} onMouseLeave={() => setPagesOpen(false)}>
-                                                <a className="nav-link" href="#">Pages</a>
-                                                {pagesOpen && (
-                                                    <ul style={{ display: 'block' }}>
-                                                        <li className="nav-item"><a className="nav-link" href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services'); }}>Service Details</a></li>
-                                                        <li className="nav-item"><a className="nav-link" href="#blog" onClick={(e) => { e.preventDefault(); scrollTo('blog'); }}>Blog Details</a></li>
-                                                        <li className="nav-item"><a className="nav-link" href="#projects" onClick={(e) => { e.preventDefault(); scrollTo('projects'); }}>Case Studies</a></li>
-                                                        <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => { e.preventDefault(); scrollTo('team'); }}>Our Team</a></li>
-                                                        <li className="nav-item"><a className="nav-link" href="#pricing" onClick={(e) => { e.preventDefault(); scrollTo('pricing'); }}>Pricing</a></li>
-                                                        <li className="nav-item"><a className="nav-link" href="#testimonials" onClick={(e) => { e.preventDefault(); scrollTo('testimonials'); }}>Testimonials</a></li>
-                                                        <li className="nav-item"><a className="nav-link" href="#faqs" onClick={(e) => { e.preventDefault(); scrollTo('faqs'); }}>FAQs</a></li>
-                                                    </ul>
-                                                )}
-                                            </li>
-                                            <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>Contact Us</a></li>
-                                        </ul>
-                                    </div>
-                                    <div className="header-btn">
-                                        <a href="#contact" className="btn-default" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>get a free audit</a>
-                                    </div>
-                                </div>
-
-                                <div className={`navbar-toggle${menuOpen ? ' active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}></div>
-                            </div>
-                        </nav>
-                        <div className="responsive-menu"></div>
-                    </div>
-                </header>
+                <Navbar />
 
                 <main>
                     {/* ── Hero Section ─────────────────────────────────────────────────────── */}
@@ -515,28 +451,13 @@ export default function HomePage() {
                                                 <div className="col-lg-7">
                                                     <div className={`hero-content ${heroReady && heroActiveIndex === i ? 'hero-revealed' : ''}`}>
                                                         <div className="section-title dark-section">
-                                                            <h3 className="hero-stagger">welcome to Bash Technologies</h3>
+                                                            <h3 className="hero-stagger">{slide.subtitle}</h3>
                                                             <h1 className="hero-stagger" style={{ animationDelay: '0.2s' }}>
-                                                                Powering your business with world-class IT infrastructure
+                                                                {slide.title}
                                                             </h1>
                                                             <p className="hero-stagger" style={{ animationDelay: '0.4s' }}>
-                                                                From network design and cloud migration to cybersecurity and IoT — we build, secure, and manage the technology backbone your business depends on.
+                                                                {slide.desc}
                                                             </p>
-                                                        </div>
-                                                        <div className="hero-content-body hero-stagger" style={{ animationDelay: '0.6s' }}>
-                                                            <div className="hero-btn">
-                                                                <a href="#contact" className="btn-default btn-highlighted"
-                                                                    onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>
-                                                                    get a free consultation
-                                                                </a>
-                                                            </div>
-                                                            <div className="video-play-button">
-                                                                <a href="https://www.youtube.com/watch?v=Y-x0efG1seA"
-                                                                    target="_blank" rel="noreferrer">
-                                                                    <i className="fa-solid fa-play"></i>
-                                                                </a>
-                                                                <h3>See how we work</h3>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -544,8 +465,7 @@ export default function HomePage() {
                                         </div>
                                     </div>
                                 </SwiperSlide>
-                            ))}
-                            <div className="hero-pagination"></div>
+                            ))}                            <div className="hero-pagination"></div>
                         </Swiper>
                     </div>
 
@@ -614,18 +534,7 @@ export default function HomePage() {
                                             </div>
                                             <div className="about-footer-content">
                                                 <div className="about-contact-btn">
-                                                    <div className="icon-box">
-                                                        <img src="/images/icon-phone.svg" alt="" />
-                                                    </div>
-                                                    <div className="about-footer-btn-content">
-                                                        <h3><a href="tel:+91123456789">+91 123 456 789</a></h3>
-                                                    </div>
-                                                </div>
-                                                <div className="about-footer-btn">
-                                                    <a href="#contact" className="btn-default"
-                                                        onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>
-                                                        contact us
-                                                    </a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -643,7 +552,7 @@ export default function HomePage() {
                                     <div className="section-title">
                                         <h3 className="fadeupin">our services</h3>
                                         <h2 className="fadeupin" data-wow-delay="0.2s">
-                                            End-to-end IT infrastructure solutions <span>for modern businesses</span>
+                                            Bash Technologies Provides<br></br> <span>end-to-end IT, networking, cybersecurity, and IoT solutions for smarter business growth.</span>
                                         </h2>
                                     </div>
                                 </div>
@@ -658,12 +567,12 @@ export default function HomePage() {
                                             </div>
                                             <div className="service-title-box">
                                                 <div className="service-title">
-                                                    <h3><a href="#services">{s.title}</a></h3>
+                                                    <h3><Link to="/managed-it-services">{s.title}</Link></h3>
                                                 </div>
                                                 <div className="service-btn">
-                                                    <a href="#services">
+                                                    <Link to="/managed-it-services">
                                                         <i className="fa-solid fa-arrow-right"></i>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                             <div className="service-content">
@@ -692,20 +601,6 @@ export default function HomePage() {
                                                 <figure className="image-anime reveal">
                                                     <img src="/images/feature-image-2.jpg" alt="Server room management" />
                                                 </figure>
-                                            </div>
-                                            <div className="company-experience-box">
-                                                <div className="company-experience-content" ref={expRef}>
-                                                    <h2><span className="counter">{exp}</span>+</h2>
-                                                    <p>Years delivering IT infrastructure excellence</p>
-                                                </div>
-                                                <div className="our-client-images company-client-images">
-                                                    <div className="client-image"><figure className="image-anime"><img src="/images/client-image-1.jpg" alt="" /></figure></div>
-                                                    <div className="client-image"><figure className="image-anime"><img src="/images/client-image-2.jpg" alt="" /></figure></div>
-                                                    <div className="client-image"><figure className="image-anime"><img src="/images/client-image-3.jpg" alt="" /></figure></div>
-                                                    <div className="client-image client-counter" ref={clientsRef}>
-                                                        <h3><span className="counter">{clients}</span>+</h3>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1111,7 +1006,7 @@ export default function HomePage() {
                                                     </div>
                                                     <div className="cta-contact-content">
                                                         <h3>Send us an email</h3>
-                                                        <p><a href="mailto:hello@bashtechnologies.com">hello@bashtechnologies.com</a></p>
+                                                        <p><a href="mailto:sales@bashtechnologies.com">hello@bashtechnologies.com</a></p>
                                                     </div>
                                                 </div>
                                             </div>
